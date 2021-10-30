@@ -1,0 +1,21 @@
+{
+	"name": "Yt Block",
+	"version": "1.0",
+	"description": "Build an Extension!",
+	"manifest_version": 3,
+
+	"content_scripts": [
+		{
+			"run_at": "document_start",
+			"matches": ["http://*.youtube.com/*", "https://*.youtube.com/*"],
+			"js": ["inject.js"],
+			"all_frames": true
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["injected.js", "sponsor_block.js", "notification.js"],
+			"matches": ["https://*.youtube.com/*"]
+		}
+	]
+}
